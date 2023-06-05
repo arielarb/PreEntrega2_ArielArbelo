@@ -68,7 +68,7 @@ let seleccionDeCliente = seleccionarEvento();
 
 //función para sumar al carrito la opción elegida y su valor en la función anterior:
 function sumarAlCarrito(nombre, precio) {
-    alert(`Sumamos una entrada para ${nombre} a tu carrito`);
+    alert(`Sumamos una entrada para ${nombre} a tu carrito por un valor de $${precio}`);
     itemsCompra += `${nombre} x1 \n`;
     precioCompra += precio;
 }
@@ -109,12 +109,12 @@ function iva(monto) {
 //Funcion para cerrar la compra, donde analizamos si el usuario llevó algún producto y, si llevó, si va a querer el monto facturado o no.
 function finalizaCompra() {
     if (precioCompra !== 0) {
-      let factura = prompt(`${nombreCliente}, el total de su compra es de ${precioCompra}, ¿va a querer factura?`).toLowerCase()
+      let factura = prompt(`${nombreCliente}, el total de su compra es de $${precioCompra}, ¿va a querer factura?`).toLowerCase()
       if ((factura == "si") || (factura == "sí")) { 
-        alert(`Perfecto, va a llevar la/s siguiente/s entrada/s:\n${itemsCompra}\n por un total de: ${iva(precioCompra)}`)
+        alert(`Perfecto, va a llevar la/s siguiente/s entrada/s:\n${itemsCompra}\n por un total de: $${iva(precioCompra)}`)
         alert("¡Agradecemos mucho tu paso por nuestro sitio 'misEntradas.com'!")
       } else {
-        alert(`Sin factura, el costo total sería de ${precioCompra}`)
+        alert(`Sin factura, el costo total sería de $${precioCompra}`)
         alert("¡Agradecemos mucho tu paso por nuestro sitio 'misEntradas.com'!")
       }
     } else {
